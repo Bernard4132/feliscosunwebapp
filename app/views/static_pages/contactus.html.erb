@@ -1,0 +1,186 @@
+<style type="text/css">
+
+  .aduins{
+ background:linear-gradient(0deg,rgba(0, 0, 0,0.6),rgba(0, 0, 0,0.6)),url(https://nikasemo-static.s3-us-west-2.amazonaws.com/felisco-sun/5f4e4e2fcc3ed-customersupp.jpg);
+  background-position:center;
+  min-height: 300px;
+  padding: 30px;
+  margin-top: 0px;
+}
+
+.aduinsh1 {
+      text-align: center; 
+      color: white; 
+      position: relative; 
+      top: 30px; 
+      font-weight: 900;  
+      text-shadow: 1px 0px 3px rgba(0, 0, 0, 0.5); 
+      font-size: 50px; 
+      line-height: 60px;
+    }
+
+.aduinsp1 {
+  text-align: center; 
+  color: white; 
+  position: relative; 
+  top: 35px;
+}
+
+.portfoliosection {
+  margin-top: 60px;
+}
+
+.actnowbutton {
+  background-color: #ffffff;
+  border: 1px solid #ffffff;
+  border-radius: 0px;
+  color: #4a4a4a;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.actnowbutton:hover {
+  background-color: #ffffff;
+  border: 1px solid #ffffff;
+  border-radius: 20px;
+  color: #4a4a4a;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.actnowbutton:active {
+  background-color: #ffffff;
+  border: 1px solid #ffffff;
+  border-radius: 20px;
+  color: #4a4a4a;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.ctasection {
+  background-color: #0290fd;
+  padding: 30px;
+}
+
+.contactus {
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+@media only screen and (min-width : 100px) and (max-width : 600px) {
+
+  .aduinsh1 {
+      text-align: center; 
+      color: white; 
+      position: relative; 
+      top: 30px; 
+      font-weight: 900;  
+      text-shadow: 1px 0px 3px rgba(0, 0, 0, 0.5); 
+      font-size: 35px; 
+      line-height: 60px;
+    }
+
+}
+
+</style>
+
+
+<section class="aduins">
+      <div class="container">
+        <div class="row" style="margin-top: 70px;">
+          <div class="col-lg-12">
+            <h1 class="aduinsh1">
+              Customer Service
+            </h1>
+            <!-- <p style="font-weight: 300; font-size: 12px;" class="aduinsp1">
+              This includes works we have done for top companies in Ghana.
+            </p> -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+<section class="contactus">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 col-md-12">
+        <br>
+        <h3 style="font-family: 'Montserrat', sans-serif; font-weight: 500; font-size: 22px; color: #00aff0;">Contact Information</h3>
+        <p style="text-align: left; font-size: 14px;">Reach Felisco Sun Ghana Limited through these dedicated contact avenues.</p>
+        <p style="text-align: left; font-size: 14px;">
+                <span><i class="fa fa-phone" aria-hidden="true" style="color: #f29c09;"></i></span><span style="font-weight: 400;"> +233(0)248238541 / +233(0)262129553 </span><br>
+                <span><i class="fa fa-whatsapp" aria-hidden="true" style="color: #f29c09;"></i></span><span style="font-weight: 400;"> +233507072708 </span><br>
+                <span><i class="fa fa-envelope" aria-hidden="true" style="color: #f29c09;"></i></span><span style="font-weight: 400;"> info@feliscosunghana.com</span><br>
+                <span><i class="fa fa-map-marker" aria-hidden="true" style="color: #f29c09;"></i></span><span style="font-weight: 400;">  Tema, Greater Accra, Ghana </span><br>
+        </p>
+        <p>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1985.1821030793963!2d-0.006302843023418097!3d5.660351805600703!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfdf80a6a87800f1%3A0x769050df84627cdf!2sValco%20Roundabout!5e0!3m2!1sen!2sgh!4v1598968540394!5m2!1sen!2sgh" width="400" height="280" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+        </p>
+      </div>
+      <div class="col-lg-6 col-md-12">
+        <br>
+        <h3 style="font-family: 'Montserrat', sans-serif; font-weight: 500; font-size: 22px; color: #00aff0;">General Enquiries.</h3>
+
+                 <%= form_for(@contact) do |f| %>
+          <% if @contact.errors.any? %>
+            <div id="error_explanation">
+              <h2><%= pluralize(@contact.errors.count, "error") %> prohibited this contact from being saved:</h2>
+
+              <ul>
+              <% @contact.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+              <% end %>
+              </ul>
+            </div>
+          <% end %>
+           
+
+          <div class="form-group">
+            <label style="text-align: left; font-size: 12px; color: #f29c09;">Your Name</label>
+            <%= f.text_field :name, :class => "form-control", :placeholder => "Enter Your Name" %>
+          </div>
+
+          <div class="form-group">
+            <label style="text-align: left; font-size: 12px; color: #f29c09;">Your Phone number</label>
+            <%= f.text_field :phonenumber, :class => "form-control", :placeholder => "Enter Your Phone Number" %>
+          </div>
+
+          <div class="form-group">
+            <label style="text-align: left; font-size: 12px; color: #f29c09;">Your Email</label>
+            <%= f.text_field :email, :class => "form-control", :placeholder => "Enter Your Email" %>
+          </div>
+
+          <div class="form-group">
+            <label style="text-align: left; font-size: 12px; color: #f29c09;">Service needed</label>
+            <select type="text" name="contact[servicetype]" id="contact_servicetype" class="form-control">
+              <option value="">-- Select Service --</option>
+              <option value="Clearing and Fowarding">Clearing and Fowarding</option>
+              <option value="Trading">Trading</option>
+              <option value="Supply of General Goods">Supply of General Goods</option>
+              <option value="Import and Export of General Goods">Import and Export of General Goods</option>
+              <option value="Transportation">Transportation</option>
+              <option value="Tracking of Vehicles">Tracking of Vehicles</option>
+              <option value="Travel Policy">Travel Policy</option>
+              <option value="Visa Acquisition Assistance">Visa Acquisition Assistance</option>
+              <option value="Passport Acquisition Assistance">Passport Acquisition Assistance</option>
+              <option value="Securing Work Permits">Securing Work Permits</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label style="text-align: left; font-size: 12px; color: #f29c09;">Message for Us</label>
+            <%= f.text_area :message, :class => "form-control", :rows => "5", :placeholder => "Enter Your Message" %>
+          </div>
+
+          <div class="form-group">
+            <%= f.submit "Submit", :class => "btn actnowbutton1" %>
+          </div>
+        <% end %>
+
+
+      </div>
+    </div>
+  </div>
+</section>
+

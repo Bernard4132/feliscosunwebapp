@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Feliso</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css">
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <script src="https://use.fontawesome.com/fc6d352727.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Francois+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Exo+2:300,300i,400,500,500i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Asap+Condensed|Poppins" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Abril+Fatface" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Bungee" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Archivo+Black" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <style type="text/css">
+	 a {
+  color: #ffffff;
+  text-decoration: none;
+  background-color: transparent;
+  -webkit-text-decoration-skip: objects;
+}
+
+a:hover {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+  /*.navbackground{
+    background-color: transparent;
+    z-index: 10;
+  }*/
+
+  .navbackground{
+    background-color: #fefefe;
+    -webkit-box-shadow: 0px 0px 35px -1px rgba(0,0,0,0.19);
+-moz-box-shadow: 0px 0px 35px -1px rgba(0,0,0,0.19);
+box-shadow: 0px 0px 35px -1px rgba(0,0,0,0.19);
+  }
+
+  .meffect{
+    background-color: #ffffff;
+    -webkit-box-shadow: 0px 0px 35px -1px rgba(0,0,0,0.89);
+-moz-box-shadow: 0px 0px 35px -1px rgba(0,0,0,0.89);
+box-shadow: 0px 0px 35px -1px rgba(0,0,0,0.89);
+}
+
+.navbar-brand1 {
+  display: inline-block;
+  padding-top: 0.3125rem;
+  padding-bottom: 0.3125rem;
+  margin-right: 1rem;
+  font-size: 1.25rem;
+  line-height: inherit;
+  white-space: nowrap;
+}
+
+
+
+
+.navbar-light .navbar-brand1{
+
+
+
+}
+
+.navbar-scroll{
+color: #000; 
+font-weight: 700;
+font-family: 'Poppins', sans-serif;
+}
+
+.navbar-light .navbar-brand:focus, .navbar-light .navbar-brand:hover {
+  color: white;
+}
+
+.navbar-light .navbar-scroll:focus, .navbar-light .navbar-scroll:hover {
+  color: #343a40;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: #000000;
+  font-weight: 400;
+  text-transform: uppercase;
+  font-size: 13px;
+  transition: border-color .5s ease-in-out;
+    -webkit-transition: border-color .5s ease-in-out;
+    -moz-transition: border-color .5s ease-in-out;
+  border-bottom: 4px solid transparent;
+}
+
+.navlinkscroll{
+  color: #343a40;
+  
+}
+
+.navbar-light .navbar-nav .nav-link:focus {
+  color: #fda102;
+  font-weight: 700;
+}
+
+ .navbar-light .navbar-nav .nav-link:hover {
+  color: #fda102;
+  font-weight: 700;
+}
+
+.navbar-light .navbar-nav .nav-link.disabled {
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.navbar-light .navbar-nav .show > .nav-link,
+.navbar-light .navbar-nav .active > .nav-link,
+.navbar-light .navbar-nav .nav-link.show,
+.navbar-light .navbar-nav .nav-link.active {
+  color: #fda102;
+  font-weight: 500;
+}
+
+.carousel-caption {
+  position: absolute;
+  right: 15%;
+  bottom: 250px;
+  left: 15%;
+  z-index: 10;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  color: #fff;
+  text-align: center;
+}
+
+hr.worksdivider{
+  height: 5px;
+  background-color: #ffcc00;
+  width: 15%;
+}
+
+.famwantyou{
+  height:560px;
+  background:linear-gradient(0deg,rgba(0,0,0,1),rgba(0,0,0,0.1)),url(http://res.cloudinary.com/nikasemo/image/upload/v1506587500/shutterstock_343468046_ffkoef.jpg);
+  background-size:cover;
+}
+
+.previtemcont{
+  width: 200px;
+  height: 200px;
+ 
+  margin-top: 20px;
+  margin-right: 10px;
+  overflow: hidden;
+}
+
+.zoomin img {
+  height: 110px;
+  width: 110px;
+  -webkit-transition: all 1s ease;
+     -moz-transition: all 1s ease;
+      -ms-transition: all 1s ease;
+          transition: all 1s ease;
+}
+.zoomin img:hover {
+  width: 180px;
+  height: 180px;
+}
+
+.mainvps{
+  font-weight: bold;
+  text-align: center;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-bottom: 10px;
+  font-family: 'Asap Condensed', sans-serif;
+}
+
+.famwantyousecthome{
+  font-family: 'Righteous', cursive; 
+  color: white; 
+  font-size: 60px; 
+  text-shadow: 1px 0px 6px rgba(150, 150, 150, 1);
+  position: relative;
+  top: 180px;
+  margin-left: 100px;
+}
+
+.famwantyousecthome2{
+  font-family: 'Asap Condensed', 
+  sans-serif; 
+  letter-spacing: 2px;
+  position: relative;
+  top: 190px;
+  margin-left: 100px;
+  color: #ffffff;
+}
+
+.actreadm{
+   position: relative;
+  top: 200px;
+  margin-left: 100px;
+}
+
+.holdit {
+	background-color: #fda102;
+	color: #ffffff;
+	padding: 7px;
+	font-size: 14px;
+	font-weight: 300;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1000;
+  display: none;
+  float: left;
+  min-width: 10rem;
+  padding: 0.5rem 0;
+  margin: 1rem 0 0;
+  font-size: 1rem;
+  color: #212529;
+  text-align: left;
+  list-style: none;
+  background-color: rgba(255, 255, 255, 0.85);
+  background-clip: padding-box;
+  border-radius: 0rem;
+}
+
+.dropdown-divider {
+  height: 0;
+  margin: 0.5rem 0;
+  overflow: hidden;
+  border-top: 1px solid #e9ecef;
+}
+
+.dropdown-item {
+  display: block;
+  width: 100%;
+  height: 60px;
+  padding: 1.25rem 1.5rem;
+  clear: both;
+ color: #000000;
+  font-weight: 300;
+  font-family: 'Exo 2', sans-serif;
+  text-align: inherit;
+  white-space: nowrap;
+  background: none;
+  border: 0;
+}
+
+.dropdown-item:focus, .dropdown-item:hover {
+  color: #ffffff;
+  text-decoration: none;
+  background-color: #fda102;
+}
+
+.dropdown-item.active, .dropdown-item:active {
+  color: #fff;
+  text-decoration: none;
+  background-color: #fda102;
+}
+
+.dropdown-item.disabled, .dropdown-item:disabled {
+  color: #f5b822;
+  background-color: transparent;
+}
+
+.navbar-toggler {
+  border: none;
+  background: transparent !important;
+}
+.navbar-toggler:hover {
+  background: transparent !important;
+}
+.navbar-toggler .icon-bar {
+  display:block;
+  background-color: #fda102;
+  width: 26px;
+  height: 2px;
+  transition: all 0.2s;
+}
+.navbar-toggler .icon-bar+.icon-bar{
+  margin-top: 5px;
+}
+.navbar-toggler .top-bar {
+  transform: rotate(45deg);
+  transform-origin: 10% 10%;
+}
+.navbar-toggler .middle-bar {
+  opacity: 0;
+}
+.navbar-toggler .bottom-bar {
+  transform: rotate(-45deg);
+  transform-origin: 10% 90%;
+}
+.navbar-toggler.collapsed .top-bar {
+  transform: rotate(0);
+}
+.navbar-toggler.collapsed .middle-bar {
+  opacity: 1;
+}
+.navbar-toggler.collapsed .bottom-bar {
+  transform: rotate(0);
+}
+
+.dropbtn1 {
+  display: block;
+  width: 100%;
+  height: 60px;
+  padding: 1.25rem 1.5rem;
+  clear: both;
+ color: #000000;
+  font-weight: 300;
+  font-family: 'Exo 2', sans-serif;
+  text-align: inherit;
+  white-space: nowrap;
+  background: none;
+  border: 0;
+}
+
+.dropbtn1:hover {
+  color: #ffffff;
+  text-decoration: none;
+  background-color: #ff6701;
+}
+
+.dropdown1 {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content1 {
+  display: none;
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.85);
+  min-width: 260px;
+  color: #000000;
+  font-weight: 300;
+  font-family: 'Exo 2', sans-serif;
+  z-index: 1;
+  left: 120px;
+  padding: 0.5rem 0;
+  margin: 0rem 0 0;
+  -webkit-box-shadow: 0px 0px 35px -1px rgba(0,0,0,0.25);
+-moz-box-shadow: 0px 0px 35px -1px rgba(0,0,0,0.25);
+box-shadow: 0px 0px 35px -1px rgba(0,0,0,0.25);
+}
+
+.dropdown-content1 a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content1 a:hover {
+  background-color: #ff6701;
+  color: #ffffff;
+  font-weight: 300;
+  width: 100%;
+}
+
+.dropdown1:hover .dropdown-content1 {
+  display: block;
+  width: 100%;
+}
+
+.dropdown1:hover .dropbtn1 {
+  background-color: #ff6701;
+  width: 100%;
+  color: #ffffff;
+}
+
+</style>
+
+  </head>
+
+  <div class="row holdit">
+		<div class="col-lg-9">
+		<span style="margin-left: 20px;"><i class="fa fa-map-marker" aria-hidden="true" style="color: #ffffff;"></i>
+		 Tema, Geater-Accra, Ghana
+		</span>
+		<span style="margin-left: 20px;"><i class="fa fa-phone" aria-hidden="true" style="color: #ffffff;"></i>
+		 +233 (24)823-8541
+		</span>
+		<span style="margin-left: 20px;"><i class="fa fa-envelope-o" aria-hidden="true" style="color: #ffffff;"></i>
+		 info@feliscosunghana.com
+		</span>
+		</div>
+		<div class="col-lg-3">
+			<span style="margin-left: 20px;">
+				<a href="https://web.facebook.com/AG-Construct-346403759418229/" target="_blank" style="color: #ffffff;">
+					<i class="fa fa-facebook" aria-hidden="true"></i>
+				</a>
+			</span>
+			<span style="margin-left: 20px;">
+				<a href="" style="color: #ffffff;">
+					<i class="fa fa-twitter" aria-hidden="true"></i>
+				</a>
+			</span>
+			<span style="margin-left: 20px;">
+				<a href="" style="color: #ffffff;">
+					<i class="fa fa-linkedin" aria-hidden="true"></i>
+				</a>
+			</span>
+			<span style="margin-left: 20px;">
+				<a href="" style="color: #ffffff;">
+					<i class="fa fa-youtube-play" aria-hidden="true"></i>
+				</a>
+			</span>
+		</div>
+	</div>
+
+  	<!-- Navigation -->
+    <nav class="navbar navbar-light navbar-expand-lg navbackground">
+      <div class="container">
+        <a class="navbar-brand1" href="/" style=""><img src="https://nikasemo-static.s3-us-west-2.amazonaws.com/felisco-sun/feliscoslogoweb.png" style="height: 80px; width: 109px; margin-right:5px;">
+        	<span style="color: #fda102; font-weight: 500;">Felisco-Sun </span>
+        	<span style="color: #fda102; font-weight: 500;">Ghana</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="/">Home
+                <span class="sr-only">(current)</span>
+              </a>
+            </li>
+            <li class="nav-item dropdown">
+               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                About Us
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" href="/whoweare">Who we are</a>
+                <a class="dropdown-item" href="/whatwedo">What we do</a>
+                <a class="dropdown-item" href="/aboutcompany">About Company</a>
+                <a class="dropdown-item" href="/ourceo">Our CEO</a>
+              </div>
+            </li>
+<li class="nav-item dropdown">
+               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Imports and Exports
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" href="/timber">Timber</a>
+                <a class="dropdown-item" href="/cashew">Cashew</a>
+                <a class="dropdown-item" href="/yellowcorn">Yellow Corn</a>
+                <a class="dropdown-item" href="/othergoods">Other Goods</a>
+              </div>
+            </li>
+            <li class="nav-item dropdown">
+               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Services
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" href="/cargoaircharter">Transportation</a>
+                <a class="dropdown-item" href="/passengeraircharter">Vehicle Tracking</a>
+                <a class="dropdown-item" href="/freightfowarding">Travel Policy</a>
+                <a class="dropdown-item" href="/fuellogistics">Visa Acquisition Assistance</a>
+                <a class="dropdown-item" href="/contractlogistics">Passport Acquisition Assistance</a>
+                <a class="dropdown-item" href="/vesselandaircraftchartering">Work permits</a>
+              </div>
+            </li>
+            
+            <!-- <li class="nav-item">
+              <a class="nav-link" href="/teams">Our Team</a>
+            </li> -->
+            <li class="nav-item">
+              <a class="nav-link" href="/shipmenttracking">Shipment Tracking</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/contactus">Contact Us</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <% if notice %>
+<div class="alert alert-success alert-dismissible" role="alert" style="position: absolute; top: 100px; z-index: 99999;>
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+  <p class="notice"><%= notice %></p>
+</div>
+<% end %>
+
+
+  <body style="font-family: 'Montserrat', sans-serif;">
+
+    <%= yield %>
+
+      <style type="text/css">
+
+	.btncontactform {
+		background-color: #e08d1e;
+		color: #ffffff;
+		border: 1px solid #e08d1e;
+		border-radius: 20px;
+		margin-top: 15px;
+	}
+
+	.btncontactform:hover {
+		background-color: #e08d1e;
+		color: #ffffff;
+		border: 1px solid #e08d1e;
+		border-radius: 20px;
+		-webkit-box-shadow: 0px 0px 15px -1px rgba(0,0,0,0.29);
+-moz-box-shadow: 0px 0px 15px -1px rgba(0,0,0,0.29);
+box-shadow: 0px 0px 15px -1px rgba(0,0,0,0.29);
+	}
+
+	.btncontactform:active {
+		background-color: #e08d1e;
+		color: #ffffff;
+		border: 1px solid #e08d1e;
+		border-radius: 20px;
+	}
+</style>
+
+
+  <footer class="py-5" style="background-color: #fda102;">
+      <div class="container">
+        <div class="row">
+        <div class="col-lg-4">
+          <div class="innerfooter">
+            <img src="https://nikasemo-static.s3-us-west-2.amazonaws.com/felisco-sun/feliscoslogoweb.png" style="height: 100px;  margin-bottom: 10px;">
+            <p style="color: #ffffff; font-size: 14px;">
+            	Felisco Trading has included tracking of shipment. But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer.
+            </p>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="innerfooter">
+            <h4 class="foothead" style="color: #ffffff;">Explore</h4>
+             <ul style="list-style:none; padding-left:0; font-family: 'Montserrat', sans-serif; font-weight: 200; line-height: 45px;">
+            <li><a href="/" style="color: #ffffff; font-weight: 300; font-size: 16px; text-decoration:none;">Home</a></li>
+            <li><a href="/aboutus" style="color: #ffffff; font-weight: 300; font-size: 16px; text-decoration:none;">About Us</a></li>
+            <li><a href="#!" style="color: #ffffff; font-weight: 300; font-size: 16px; text-decoration:none;">Services</a></li>
+            <!-- <li><a href="/teams" style="color: #e08d1e; font-weight: 300; font-size: 16px; text-decoration:none;">Our Team</a></li> -->
+            <li><a href="#!" style="color: #ffffff; font-weight: 300; font-size: 16px; text-decoration:none;">Core Values</a></li>
+            <li><a href="/shipmenttracking" style="color: #ffffff; font-weight: 300; font-size: 16px; text-decoration:none;">Track Shipment</a></li>
+            <li><a href="/contactus" style="color: #ffffff; font-weight: 300; font-size: 16px; text-decoration:none;">Contact Us</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="innerfooter">
+            <h4 class="foothead" style="color: #ffffff;">Send a Message</h4>
+            <p style="color: #ffffff; font-size: 14px;">
+            	Send us a contact. Let's get back to you with something special!
+            </p>
+            <form>
+            	<div class="form-group">
+			    <label style="color: #ffffff; font-weight: 300; font-size: 14px;">First Name</label>
+			    <input type="text" class="form-control" placeholder="Your Name">
+			  </div>
+
+			  <div class="form-group">
+			    <label style="color: #ffffff; font-weight: 300; font-size: 14px;">Email address</label>
+			    <input type="email" class="form-control" aria-describedby="emailHelp" placeholder="Your email">
+			    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+			  </div>
+			  
+			  <div class="form-group">
+			    <label style="color: #ffffff; font-weight: 300; font-size: 14px;">Your Message</label>
+			    <textarea class="form-control" rows="5" placeholder="Send us a message"></textarea>
+			  </div>
+			  <p style="text-align: center;"><button type="submit" class="btn btn-lg btn-primary btncontactform">Send</button></p>
+			</form>
+          </div>
+        </div>
+        
+      </div>
+      
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <div class="row" style="margin-top: 10px; background-color: #ffffff; color: #aeaeae; font-size: 14px;">
+        <div class="col-sm-12" style="padding: 20px;">
+        <p class="m-0 text-center" style="font-family: 'Montserrat', sans-serif;">Copyright &copy; Felisco Sun Ghana Ltd, 2020</p>
+      </div>
+    </div>
+
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+      
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.js"></script>
+ <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.js.map"></script>
+
+ <script type="text/javascript">
+    $(document).on('click', '[data-toggle="lightbox"]', function(event) {
+        event.preventDefault();
+        $(this).ekkoLightbox();
+    });
+</script>
+
+  </body>
+</html>
