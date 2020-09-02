@@ -24,6 +24,21 @@
          }
       }
 
+      .whatsapp{
+        display: none;
+        color: #1DC143;
+      }
+
+      .whatsapp:hover, .whatsapp:focus{
+        background: #1DC143;
+        color: #fff;
+        text-shadow: 0 0 1px rgba(0,0,0,0.2);
+      }
+
+      .whatsapp.activeWhatsapp{
+        display: inline-block;
+      }
+
 
 </style>
 
@@ -160,11 +175,49 @@
         </p>
 
         <button class="printbtn" onclick="window.print();">Print</button>
+        <!-- <a href= "whatsapp://send?text=https://feliscosunghana.com<%= @shippingorder.id %>"
+        data-action="share/whatsapp/share"
+        target="_blank" style="color: blue;"> 
+        Share to whatsapp 
+    </a>  -->
+        <!-- <a alt="Whatsapp" href="whatsapp://send" data-text="Text to share" data-href="https://feliscosunghana.com/<%= @shippingorder.id %>" class="whatsapp wa_btn"><span class="ion-social-whatsapp"></span> Whatsapp</a> -->
+        <a href="whatsapp://send?text=https://feliscosunghana.com/<%= @shippingorder.id %>" style="color: blue;" data-action="share/whatsapp/share">Share via Whatsapp</a>
+
         <br><br><br>
       </div>
     </div>
   </div>
 </div>
+
+<script type="text/javascript">
+  waShBtn = function() {
+  if( this.isIos === true ) {
+    var b = [].slice.call( document.querySelectorAll(".wa_btn") );
+    for (var i = 0; i < b.length; i++) {
+      var t = b[i].getAttribute("data-text");
+      var u = b[i].getAttribute("data-href");
+      var o = b[i].getAttribute("href");
+      var at = "?text=" + encodeURIComponent( t );
+      if (t) {
+          at += "%20%0A";
+      }
+      if (u) {
+          at += encodeURIComponent( u );
+      } else {
+          at += encodeURIComponent( document.URL );
+      }
+      b[i].setAttribute("href", o + at);
+      b[i].setAttribute("target", "_top");
+      b[i].setAttribute("target", "_top");
+      b[i].className += ' activeWhatsapp';
+      }
+    }
+  }
+
+  waShBtn.prototype.isIos = ((navigator.userAgent.match(/Android|iPhone/i) && !navigator.userAgent.match(/iPod|iPad/i)) ? true : false);
+
+  var theWaShBtn = new waShBtn();
+</script>
 
 
 
