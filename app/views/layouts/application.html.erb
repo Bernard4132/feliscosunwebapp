@@ -330,7 +330,7 @@ hr.worksdivider{
 .dropbtn1:hover {
   color: #ffffff;
   text-decoration: none;
-  background-color: #ff6701;
+  background-color: #fda102;
 }
 
 .dropdown1 {
@@ -363,7 +363,7 @@ box-shadow: 0px 0px 35px -1px rgba(0,0,0,0.25);
 }
 
 .dropdown-content1 a:hover {
-  background-color: #ff6701;
+  background-color: #fda102;
   color: #ffffff;
   font-weight: 300;
   width: 100%;
@@ -375,7 +375,7 @@ box-shadow: 0px 0px 35px -1px rgba(0,0,0,0.25);
 }
 
 .dropdown1:hover .dropbtn1 {
-  background-color: #ff6701;
+  background-color: #fda102;
   width: 100%;
   color: #ffffff;
 }
@@ -451,6 +451,7 @@ box-shadow: 0px 0px 35px -1px rgba(0,0,0,0.25);
                 <span class="sr-only">(current)</span>
               </a>
             </li>
+            
             <li class="nav-item dropdown">
                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 About Us
@@ -462,28 +463,35 @@ box-shadow: 0px 0px 35px -1px rgba(0,0,0,0.25);
                 <a class="dropdown-item" href="/ourceo">Our CEO</a>
               </div>
             </li>
-<li class="nav-item dropdown">
+			<li class="nav-item dropdown">
                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Imports and Exports
+                Shipping Services
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <a class="dropdown-item" href="/timber">Timber</a>
-                <a class="dropdown-item" href="/cashew">Cashew</a>
-                <a class="dropdown-item" href="/yellowcorn">Yellow Corn</a>
-                <a class="dropdown-item" href="/">Other Goods</a>
+                <a class="dropdown-item" href="/clearingandfowarding">Clearing and Fowarding</a>
+                <a class="dropdown-item" href="/generalgoods">Supply of General Goods</a>
+                <div class="dropdown1">
+                  <button class="dropbtn1" style="width: 100%;">Commodities Tading</button>
+                  <div class="dropdown-content1">
+                    <a href="/timber">Timber</a>
+                    <a href="/cashew">Cashew</a>
+                    <a href="/yellowcorn">Yellow corn</a>
+                    <!-- <a href="/digitalpublishing">Digital Publishing</a> -->
+                  </div>
+                </div>
               </div>
             </li>
             <li class="nav-item dropdown">
                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Services
+                General Services
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <a class="dropdown-item" href="/">Transportation</a>
-                <a class="dropdown-item" href="/">Vehicle Tracking</a>
-                <a class="dropdown-item" href="/">Travel Policy</a>
-                <a class="dropdown-item" href="/">Visa Acquisition Assistance</a>
-                <a class="dropdown-item" href="/">Passport Acquisition Assistance</a>
-                <a class="dropdown-item" href="/">Work permits</a>
+                <a class="dropdown-item" href="/transportation">Transportation</a>
+                <a class="dropdown-item" href="/vehicletracking">Vehicle Tracking</a>
+                <a class="dropdown-item" href="/travelpolicy">Travel Policy</a>
+                <a class="dropdown-item" href="/visaacquisition">Visa Acquisition Assistance</a>
+                <a class="dropdown-item" href="/passportacquisition">Passport Acquisition Assistance</a>
+                <a class="dropdown-item" href="/workpermits">Work permits</a>
               </div>
             </li>
             
@@ -562,6 +570,14 @@ box-shadow: 0px 0px 15px -1px rgba(0,0,0,0.29);
             <li><a href="/aboutcompany" style="color: #ffffff; font-weight: 300; font-size: 16px; text-decoration:none;">About our Company</a></li>
             <!-- <li><a href="/teams" style="color: #e08d1e; font-weight: 300; font-size: 16px; text-decoration:none;">Our Team</a></li> -->
             <li><a href="/ourceo" style="color: #ffffff; font-weight: 300; font-size: 16px; text-decoration:none;">About our CEO</a></li>
+            <% if user_signed_in? %>
+            <li><%= link_to "Log Out", destroy_user_session_path, :method => :delete, :style => "color: white; font-weight: 300; font-size: 16px; text-decoration:none;" %></li>
+            <li><a href="/admindashboard" style="color: white; font-weight: 300; font-size: 16px; text-decoration:none;">Admin Dashboard</a>
+            </li>
+            <% else %>
+            <li><a href="/users/sign_in" style="color: white; font-weight: 300; font-size: 16px; text-decoration:none;">Admin Login</a>
+            </li>
+            <% end %>
             </ul>
           </div>
         </div>
