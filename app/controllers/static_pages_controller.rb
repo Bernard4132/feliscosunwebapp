@@ -76,6 +76,10 @@ def workpermits
 	
 end
 
+def admindashboard
+	
+end
+
 end
 
 

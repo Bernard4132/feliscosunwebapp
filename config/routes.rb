@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :shippingorders
   devise_for :users
   resources :contacts
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
@@ -22,4 +23,5 @@ Rails.application.routes.draw do
    match '/visaacquisition', to: 'static_pages#visaacquisition', via: 'get'
    match '/passportacquisition', to: 'static_pages#passportacquisition', via: 'get'
    match '/workpermits', to: 'static_pages#workpermits', via: 'get'
+   match '/admindashboard', to: 'static_pages#admindashboard', via: 'get'
 end

@@ -1,0 +1,33 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  ourref: MyString
+  fromcomp: MyString
+  yourref: MyString
+  shippingline: MyString
+  containerno: MyString
+  isocode: MyString
+  festatus: MyString
+  sealno: MyString
+  blno: MyString
+  drivername: MyString
+  trucknumber: MyString
+  driverid: MyString
+  truckcompany: MyString
+  condition: MyString
+
+two:
+  ourref: MyString
+  fromcomp: MyString
+  yourref: MyString
+  shippingline: MyString
+  containerno: MyString
+  isocode: MyString
+  festatus: MyString
+  sealno: MyString
+  blno: MyString
+  drivername: MyString
+  trucknumber: MyString
+  driverid: MyString
+  truckcompany: MyString
+  condition: MyString

@@ -1,0 +1,53 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Shippingorders</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Ourref</th>
+      <th>Fromcomp</th>
+      <th>Yourref</th>
+      <th>Shippingline</th>
+      <th>Containerno</th>
+      <th>Isocode</th>
+      <th>Festatus</th>
+      <th>Sealno</th>
+      <th>Blno</th>
+      <th>Drivername</th>
+      <th>Trucknumber</th>
+      <th>Driverid</th>
+      <th>Truckcompany</th>
+      <th>Condition</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @shippingorders.each do |shippingorder| %>
+      <tr>
+        <td><%= shippingorder.ourref %></td>
+        <td><%= shippingorder.fromcomp %></td>
+        <td><%= shippingorder.yourref %></td>
+        <td><%= shippingorder.shippingline %></td>
+        <td><%= shippingorder.containerno %></td>
+        <td><%= shippingorder.isocode %></td>
+        <td><%= shippingorder.festatus %></td>
+        <td><%= shippingorder.sealno %></td>
+        <td><%= shippingorder.blno %></td>
+        <td><%= shippingorder.drivername %></td>
+        <td><%= shippingorder.trucknumber %></td>
+        <td><%= shippingorder.driverid %></td>
+        <td><%= shippingorder.truckcompany %></td>
+        <td><%= shippingorder.condition %></td>
+        <td><%= link_to 'Show', shippingorder %></td>
+        <td><%= link_to 'Edit', edit_shippingorder_path(shippingorder) %></td>
+        <td><%= link_to 'Destroy', shippingorder, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Shippingorder', new_shippingorder_path %>

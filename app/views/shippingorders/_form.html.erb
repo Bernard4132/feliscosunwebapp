@@ -1,0 +1,83 @@
+<%= form_for(shippingorder) do |f| %>
+  <% if shippingorder.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(shippingorder.errors.count, "error") %> prohibited this shippingorder from being saved:</h2>
+
+      <ul>
+      <% shippingorder.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  
+  <div class="form-group">
+    <label style="font-size: 13px; font-weight: 600;">Company Name</label>
+    <%= f.text_field :fromcomp, :class => "form-control", :placeholder => "Company Name" %>
+  </div>
+
+  <!-- <div class="field">
+    <%= f.label :yourref %>
+    <%= f.text_field :yourref %>
+  </div> -->
+
+  <div class="form-group">
+    <label style="font-size: 13px; font-weight: 600;">Shipping Line</label>
+    <%= f.text_field :shippingline, :class => "form-control", :placeholder => "Shipping Line" %>
+  </div>
+
+  <div class="form-group">
+    <label style="font-size: 13px; font-weight: 600;">Container number</label>
+    <%= f.text_field :containerno, :class => "form-control", :placeholder => "Container number" %>
+  </div>
+
+  <div class="form-group">
+    <label style="font-size: 13px; font-weight: 600;">ISO code</label>
+    <%= f.text_field :isocode, :class => "form-control", :placeholder => "ISO code" %>
+  </div>
+
+  <div class="form-group">
+    <label style="font-size: 13px; font-weight: 600;">FE status</label>
+    <%= f.text_field :festatus, :class => "form-control", :placeholder => "FE status" %>
+  </div>
+
+  <div class="form-group">
+    <label style="font-size: 13px; font-weight: 600;">Seal number</label>
+    <%= f.text_field :sealno, :class => "form-control", :placeholder => "Seal no." %>
+  </div>
+
+  <div class="form-group">
+    <label style="font-size: 13px; font-weight: 600;">B/L number</label>
+    <%= f.text_field :blno, :class => "form-control", :placeholder => "B/L no." %>
+  </div>
+
+  <div class="form-group">
+    <label style="font-size: 13px; font-weight: 600;">Driver name</label>
+    <%= f.text_field :drivername, :class => "form-control", :placeholder => "Driver name" %>
+  </div>
+
+  <div class="form-group">
+    <label style="font-size: 13px; font-weight: 600;">Truck Number</label>
+    <%= f.text_field :trucknumber, :class => "form-control", :placeholder => "Truck Number" %>
+  </div>
+
+  <div class="form-group">
+    <label style="font-size: 13px; font-weight: 600;">Driver ID</label>
+    <%= f.text_field :driverid, :class => "form-control", :placeholder => "Driver ID" %>
+  </div>
+
+  <div class="form-group">
+    <label style="font-size: 13px; font-weight: 600;">Truck Company</label>
+    <%= f.text_field :truckcompany, :class => "form-control", :placeholder => "Truck Company" %>
+  </div>
+
+  <div class="form-group">
+    <label style="font-size: 13px; font-weight: 600;">Condition</label>
+    <%= f.text_field :condition, :class => "form-control", :placeholder => "Condition" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.submit "Create", :class => "btn btn-lg btn-success" %>
+  </div>
+<% end %>
