@@ -23,6 +23,20 @@ class ShippingordersController < ApplicationController
   def edit
   end
 
+  def findshippingorder
+    containerno = params[:containerno]
+    @shippingorder = Shippingorder.find_by_containerno(containerno)
+    if @shippingorder.nil?
+        respond_to do |format|
+          format.html { redirect_to :back, alert: 'Sorry. Receipt does not exist or your container number is wrong.' }
+        end
+    else
+        respond_to do |format|
+          format.html { redirect_to @shippingorder, notice: 'Your Receipt here please.' }
+        end
+    end
+  end
+
   # POST /shippingorders
   # POST /shippingorders.json
   def create

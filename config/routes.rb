@@ -24,4 +24,5 @@ Rails.application.routes.draw do
    match '/passportacquisition', to: 'static_pages#passportacquisition', via: 'get'
    match '/workpermits', to: 'static_pages#workpermits', via: 'get'
    match '/admindashboard', to: 'static_pages#admindashboard', via: 'get'
+   post 'findshippingorder' =>'shippingorders#findshippingorder', :as => 'findshippingorder'
 end

@@ -420,17 +420,19 @@ box-shadow: 0px 5px 12px 1px rgba(0,0,0,0.2);
 					            Enter your tracking code in the input area below
 					          </p>
 
-					          <div class="row no-gutters">
-					            <div class="col-lg-8 col-9">
-					              <input type="text" placeholder="Tracking Code" class="form-control" name="">
-					            </div>
-					            <div class="col-lg-4 col-3">
-					              <button class="btn btn-primary serchlo" style="margin-left: 10px; background-color: #fda102; border: none;">
-					              		Find 
-					              		<i class="fa fa-search" aria-hidden="true"></i>
-					         	 </button>
-					            </div>
-					          </div>
+					          <%= form_tag findshippingorder_path do %>
+			                     <div class="row no-gutters">
+			                        <div class="col-lg-8">
+			                          <input type="text" name="containerno" id="shippingorder_containerno" placeholder="Container number" class="form-control" />
+			                        </div>
+			                        <div class="col-lg-4">
+			                          <button style="margin-left: 10px;" type="submit" name="commit" class="btn btn-primary" style="background-color: #0290fd; border: none;">
+			                              Find 
+			                              <i class="fa fa-search" aria-hidden="true"></i>
+			                       </button>
+			                        </div>
+			                      </div>
+		                    <% end %>
 
           					</div> 
     				</p>

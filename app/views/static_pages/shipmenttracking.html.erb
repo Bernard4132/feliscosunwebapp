@@ -122,20 +122,22 @@
                   <h4 style="color: #0290fd; margin-bottom: 20px;">Shipment Tracking</h4>
 
                       <p class="howbintrot">
-                      Enter your tracking code in the input area below
+                      Enter your container number in the input area below
                     </p>
 
-                    <div class="row no-gutters">
-                      <div class="col-lg-8">
-                        <input type="text" placeholder="Tracking Code" class="form-control" name="">
+                    <%= form_tag findshippingorder_path do %>
+                     <div class="row no-gutters">
+                        <div class="col-lg-8">
+                          <input type="text" name="containerno" id="shippingorder_containerno" placeholder="Container number" class="form-control" />
+                        </div>
+                        <div class="col-lg-4">
+                          <button style="margin-left: 10px;" type="submit" name="commit" class="btn btn-primary" style="background-color: #0290fd; border: none;">
+                              Find 
+                              <i class="fa fa-search" aria-hidden="true"></i>
+                       </button>
+                        </div>
                       </div>
-                      <div class="col-lg-4">
-                        <button style="margin-left: 10px;" class="btn btn-primary" style="background-color: #0290fd; border: none;">
-                            Find 
-                            <i class="fa fa-search" aria-hidden="true"></i>
-                     </button>
-                      </div>
-                    </div>
+                    <% end %>
 
                     </div> 
             </p>
