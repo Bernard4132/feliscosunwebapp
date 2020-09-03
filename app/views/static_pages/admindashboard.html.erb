@@ -39,7 +39,7 @@
 					<p style="border-bottom: 1px solid #aeaeae; padding-bottom: 10px;">
 						<%= shippingorder.fromcomp %><br>
 						<%= shippingorder.containerno %><br>
-						<% if shippingorder.user? %>
+						<% if shippingorder.user.present? %>
 						<span style="font-size: 10px;">Created by: <%= shippingorder.user.email %> </span><br><br>
 						<% end %>
 						<a href="/shippingorders/<%= shippingorder.id %>" style="color: blue;">Shipping details</a>
