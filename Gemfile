@@ -27,6 +27,7 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
 gem 'devise'
+gem 'ransack'
 # gem 'redis', '~> 3.0'
 gem 'barby',  '~> 0.6.2'
 gem 'rqrcode','~> 0.4.2'

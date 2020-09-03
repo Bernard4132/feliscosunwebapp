@@ -77,7 +77,7 @@ def workpermits
 end
 
 def admindashboard
-	
+	@q = Shippingorder.ransack(params[:q])
 end
 
 end

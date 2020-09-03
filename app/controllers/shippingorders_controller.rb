@@ -5,6 +5,8 @@ class ShippingordersController < ApplicationController
   # GET /shippingorders.json
   def index
     @shippingorders = Shippingorder.all
+    @search = Shippingorder.ransack(params[:q])
+    @shippingorders = @search.result
   end
 
   # GET /shippingorders/1
@@ -25,6 +27,7 @@ class ShippingordersController < ApplicationController
   # POST /shippingorders.json
   def create
     @shippingorder = Shippingorder.new(shippingorder_params)
+    @shippingorder.user = current_user
 
     respond_to do |format|
       if @shippingorder.save
@@ -69,6 +72,6 @@ class ShippingordersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def shippingorder_params
-      params.require(:shippingorder).permit(:ourref, :fromcomp, :yourref, :shippingline, :containerno, :isocode, :festatus, :sealno, :blno, :drivername, :trucknumber, :driverid, :truckcompany, :condition)
+      params.require(:shippingorder).permit(:ourref, :fromcomp, :yourref, :shippingline, :containerno, :isocode, :festatus, :sealno, :blno, :drivername, :trucknumber, :driverid, :truckcompany, :condition, :user_id, :gate)
     end
 end
