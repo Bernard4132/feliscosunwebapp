@@ -108,7 +108,7 @@
             </p>
 
             <h6 style="font-weight: 700;">Enter your details below</h6>
-            <form>
+            <form id="sumbformtodianim">
               <div class="form-group">
                 <label>Name</label>
                 <input class="form-control" type="text" name="rqname" id="rq_name">
@@ -133,7 +133,7 @@
               </div>
             </form>
 
-            <button class="btn btn-lg btn-primary" style="margin-bottom: 40px;">Submit</button>
+            <button class="btn btn-lg btn-primary" id="sendinfotodianim" style="margin-bottom: 40px;">Submit</button>
              
       </div>
 
@@ -185,3 +185,30 @@
     </div>
   </div>
 </section>
+
+
+
+<script type="text/javascript">
+  const formservicereq = document.querySelector("#sumbformtodianim");
+  const createservicereq = document.querySelector("#sendinfotodianim");
+
+  createservicereq.addEventListener('click', (e) => {
+      e.preventDefault();
+      
+  })
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
