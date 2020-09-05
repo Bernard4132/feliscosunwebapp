@@ -1,5 +1,8 @@
 class ShippingordersController < ApplicationController
   before_action :set_shippingorder, only: [:show, :edit, :update, :destroy]
+  skip_before_action :verify_authenticity_token,
+                   :if => Proc.new { |c| c.request.format == 'application/json' }
+  protect_from_forgery with: :null_session
 
   # GET /shippingorders
   # GET /shippingorders.json
