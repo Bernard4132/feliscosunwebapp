@@ -28,7 +28,9 @@ class ShippingordersController < ApplicationController
 
   def findshippingorder
     containerno = params[:containerno]
-    @shippingorder = Shippingorder.find_by_containerno(containerno)
+    containernoupcase = containerno.upcase
+    containerstrip = containernoupcase.split.join
+    @shippingorder = Shippingorder.find_by_containerno(containerstrip)
     if @shippingorder.nil?
         respond_to do |format|
           format.html { redirect_to :back, alert: 'Sorry. Receipt does not exist or your container number is wrong.' }
