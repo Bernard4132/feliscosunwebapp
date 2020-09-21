@@ -177,7 +177,7 @@
           <%= @shippingorder.condition %>
         </p>
         <p style="text-align: right;">
-          <%= image_tag(generate_qr("https://feliscosunghana.com" + @shippingorder.id.to_s), :class => "qr-code") %>
+          <%= image_tag(generate_qr("https://feliscosunghana.com/shippingorders/" + @shippingorder.id.to_s), :class => "qr-code") %>
         </p>
         <% if user_signed_in? %>
         <button class="printbtn" onclick="window.print();">Print</button>
